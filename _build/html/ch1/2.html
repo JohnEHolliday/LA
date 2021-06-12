@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2 Row Operations &#8212; Linear Algebra with MATLAB</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.2.1 Lab 1" href="02/1.html" />
+    <link rel="prev" title="1.1 Systems of Linear Equations" href="1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/UNG.logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Linear Algebra with MATLAB</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   Linear Algebra Using MATLAB
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="0.html">
+   Chapter 1
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.html">
+     1.1 Systems of Linear Equations
+    </a>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="current reference internal" href="#">
+     1.2 Row Operations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="02/1.html">
+       1.2.1 Lab 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02/2.html">
+       1.2.2 Homework
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="3.html">
+     1.3 Parameterized Solutions
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="03/1.html">
+       1.3.1 Lab 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="03/2.html">
+       1.3.2 Homework
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ch2/0.html">
+   Chapter 2
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch2/1.html">
+     2.1 Vectors
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ch2/2.html">
+     2.2 Vector Equations and Spans
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ch2/02/1.html">
+       2.2.1 Homework
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch2/3.html">
+     2.3 Matrix Equations
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ch2/4.html">
+     2.4 Solution Sets
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ch2/04/1.html">
+       2.4.1 Lab 3
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch2/5.html">
+     2.5 Linear Independence
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ch2/6.html">
+     2.6 Subspaces
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ch2/06/1.html">
+       2.6.1 Lab 4
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch2/7.html">
+     2.7 Basis and Dimension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch2/8.html">
+     2.8 Bases as Coordinate Systems
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ch2/9.html">
+     2.9 The Rank Theorem
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ch2/09/1.html">
+       2.9.1 Lab 5
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ch3/0.html">
+   Chapter 3
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch3/1.html">
+     3.1 Matrix Transformations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch3/2.html">
+     3.2 One-to-one and Onto Transformations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch3/3.html">
+     3.3 Linear Transformations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch3/4.html">
+     3.4 Matrix Multiplication
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ch3/5.html">
+     3.5 Matrix Inverses
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ch3/05/1.html">
+       3.5.1 Lab 6
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch3/6.html">
+     3.6 Invertible Matrix Theorem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ch4/0.html">
+   Chapter 4
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch4/1.html">
+     4.1 Determinants: Definition
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ch4/2.html">
+     4.2 Cofactor Expansions
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ch4/02/1.html">
+       4.2.1 Lab 7
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch4/3.html">
+     4.3 Determinants and Volume
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ch5/0.html">
+   Chapter 5
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch5/1.html">
+     5.1 Eigenvalues and Eigenvectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch5/2.html">
+     5.2 The Characteristic Polynomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch5/3.html">
+     5.3 Similarity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch5/4.html">
+     5.4 Diagonalization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../dix/0.html">
+   Appendix: Instructor Apps
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dix/1.html">
+     A.1 Generate
+     <span class="math notranslate nohighlight">
+      \(n\times n\)
+     </span>
+     example matrix that is invertible
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dix/2.html">
+     A.2 Generate example matrix suitable for row-reduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dix/3.html">
+     A.3 Dollar sign math matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dix/4.html">
+     A.4 Dollar sign math for creating vectors from columns of matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dix/5.html">
+     A.5 Timesaver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dix/6.html">
+     A.6 Cofactor Expansion Tool
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch1/2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/StraightDraw/linear/master?urlpath=tree/content/ch1/2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#augmented-matrices">
+   Augmented Matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Row Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strategic-goal-row-echelon-form">
+     Strategic Goal: Row Echelon Form
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#row-operation-1-swapping-rows">
+       Row Operation 1: Swapping Rows
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#row-operation-2-multiplying-a-row-by-a-non-zero-scalar">
+       Row Operation 2: Multiplying a Row by a Non-zero Scalar
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#row-operation-3-replacing-a-row-with-the-sum-of-that-row-and-a-scalar-multiple-of-another-row">
+       Row Operation 3: Replacing a Row with the Sum of that Row and a Scalar Multiple of Another Row
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ref-completed">
+     REF Completed
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-2-row-reduce-to-rref">
+     Goal 2: Row-Reduce to RREF
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#by-hand-examples">
+     By-hand Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="row-operations">
+<h1>1.2 Row Operations<a class="headerlink" href="#row-operations" title="Permalink to this headline">¶</a></h1>
+<p>We need to learn how to row-reduce matrices. Row-reducing is a skill will use in almost every process and application problem in the first three-quarters of this course. Let’s begin with the matrix equation: <span class="math notranslate nohighlight">\(A\vec x=\vec v\)</span> where:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=\left[\begin{array}{rrr}0&amp;0&amp;-2\\2&amp;0&amp;-10\\1&amp;1&amp;-3\\\end{array}\right] \hspace{1cm}\text{and} \hspace{1cm}\vec v = \left[\begin{array}{r}-4\\2\\3\\\end{array}\right]\end{split}\]</div>
+<p>We need to first create MATLAB versions of the example matrix and the vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">2</span> <span class="p">;</span> <span class="n">2</span> <span class="s">0</span> <span class="o">-</span><span class="mi">10</span> <span class="p">;</span> <span class="n">1</span> <span class="s">1</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">v</span><span class="p">=[</span><span class="o">-</span><span class="mi">4</span> <span class="p">;</span> <span class="n">2</span> <span class="p">;</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =
+
+     0     0    -2
+     2     0   -10
+     1     1    -3
+
+
+v =
+
+    -4
+     2
+     3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Matlab treats <span class="math notranslate nohighlight">\(\vec v\)</span> as a <span class="math notranslate nohighlight">\(3\times 1\)</span> matrix, and all built-in Matlab matrix operations work for vectors just as they do for marices.</p>
+<div class="section" id="augmented-matrices">
+<h2>Augmented Matrices<a class="headerlink" href="#augmented-matrices" title="Permalink to this headline">¶</a></h2>
+<p>The solution vector <span class="math notranslate nohighlight">\(\vec x\)</span> can be found by row-reducing the corresponding augmented matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[A|\vec v]=\left[\begin{array}{rrr|r}0&amp;0&amp;-2&amp;2\\2&amp;0&amp;-10&amp;-4\\1&amp;1&amp;-3&amp;3\\\end{array}\right]\end{split}\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Joining two objects is often called <em>concatenation</em> in programming languages.</p>
+</div>
+</div>
+<p>We create the augmented matrix in Matlab using the code block below. The brackets say “join these two matrices into one” which MATLAB will do if its possible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">=[</span><span class="n">A</span><span class="p">,</span><span class="n">v</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B =
+
+     0     0    -2    -4
+     2     0   -10     2
+     1     1    -3     3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the column vector <span class="math notranslate nohighlight">\(\vec v\)</span>  is the fourth column of the matrix. To refer to individual elements of matrix , we can specify its row and column:</p>
+<p>To refer to an entire row (or column), we use a colon which is Matlab’s indexing operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+     2     0   -10     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the colon is in the column position, all elements in Row 2 are displayed as Matlab indexes through columns 1 through 4. We will use this indexing feature to create row operations.</p>
+</div>
+<div class="section" id="id1">
+<h2>Row Operations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>We can use just the following three elementary row operations to solve any linear system:</p>
+<ol class="simple">
+<li><p>Swapping two rows</p></li>
+<li><p>Multiplying a row by a non-zero scalar</p></li>
+<li><p>Replacing any row with the sum of that row and a scalar multiple of another row</p></li>
+</ol>
+<div class="section" id="strategic-goal-row-echelon-form">
+<h3>Strategic Goal: Row Echelon Form<a class="headerlink" href="#strategic-goal-row-echelon-form" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><img alt="REF Ex 1" src="https://images.deepai.org/glossary-terms/row-echelon-form-3253747.jpg" />
+<img alt="REF Ex 2" src="https://images.deepai.org/glossary-terms/row-echelon-form-5349083.jpg" />
+<img alt="REF Ex 3" src="https://images.deepai.org/glossary-terms/row-echelon-form-379522.jpg" />
+<img alt="REF Ex 4" src="https://images.deepai.org/glossary-terms/row-echelon-form-1220669.jpg" /></p>
+<p>Examples of matrices in row-reduced form, abbreviated <strong>ref</strong>.</p>
+</div>
+<p>We have two ways to solve a linear system, a partial row-reduction method with back-substitution, and a full row-reduction method that leaves the solution on the right-hand side of the augmentation bar. The first step is to row-redcue to <strong>ref</strong> form</p>
+<div class="section" id="row-operation-1-swapping-rows">
+<h4>Row Operation 1: Swapping Rows<a class="headerlink" href="#row-operation-1-swapping-rows" title="Permalink to this headline">¶</a></h4>
+<p>In the augmented matrix B, we see that Row 2 has a pivot in the third position. Thus, we can make progress by swapping Row 1 and Row 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">([</span><span class="mi">2</span> <span class="mi">1</span><span class="p">],:)=</span><span class="n">B</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B =
+
+     2     0   -10     2
+     0     0    -2    -4
+     1     1    -3     3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can swap multiple rows at once.</p>
+</div>
+<p>We would actually prefer the row starting with “1” to be our pivot, and we want the row that starts with zeros at the bottom. Let’s do all that at once with a multi-row-swap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">],:)=</span><span class="n">B</span><span class="p">([</span><span class="mi">3</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">],:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B =
+
+     1     1    -3     3
+     2     0   -10     2
+     0     0    -2    -4
+</pre></div>
+</div>
+</div>
+</div>
+<p>To understand the mapping, remember that the “old” matrix, the one we started with, is on the right side of the equal sign. The new matrix we are creating is on the left. Row 2 is sent to Row 1, Row 3 to Row 2 and Row 1 to Row 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="p">=</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b =
+
+     1     1    -3     3
+     2     0   -10     2
+     0     0    -2    -4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Save your matrix into a new matrix before operating on it. This creates a saved checkpoint of your matrix. If you mess up later, you can return to this point rather than going all the way back to the beginning.</p>
+</div>
+<p>As you can in the above example, the lists in the brackets control how the rows will be swapped. Experiment with different values, and see what happens.</p>
+</div>
+<div class="section" id="row-operation-2-multiplying-a-row-by-a-non-zero-scalar">
+<h4>Row Operation 2: Multiplying a Row by a Non-zero Scalar<a class="headerlink" href="#row-operation-2-multiplying-a-row-by-a-non-zero-scalar" title="Permalink to this headline">¶</a></h4>
+<p>Let’s return to matrix B. Multiplying through the first row by <span class="math notranslate nohighlight">\(-\frac{1}{2}\)</span> will turn the first pivot into a one:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b =
+
+     1     1    -3     3
+    -1     0     5    -1
+     0     0    -2    -4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Pro Tip</p>
+<p>Use lower case letters for matrices while performing row operations. They are a whole lot easier to type. Now <span class="math notranslate nohighlight">\(B\)</span> will be our clean copy of the original augmented matrix, and we can keep working with <span class="math notranslate nohighlight">\(b\)</span>.</p>
+</div>
+<p>Let’s do the same with Row 3: multiply through by <span class="math notranslate nohighlight">\(-\frac{1}{2}\)</span>. While neither of these row operations are needed, when working by we often multiply through a row by a non-zero real to make life easier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b =
+
+     1     1    -3     3
+    -1     0     5    -1
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="row-operation-3-replacing-a-row-with-the-sum-of-that-row-and-a-scalar-multiple-of-another-row">
+<h4>Row Operation 3: Replacing a Row with the Sum of that Row and a Scalar Multiple of Another Row<a class="headerlink" href="#row-operation-3-replacing-a-row-with-the-sum-of-that-row-and-a-scalar-multiple-of-another-row" title="Permalink to this headline">¶</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Pro Tip</p>
+<p>This is the workhorse row op – learn it well, grasshopper.</p>
+</div>
+<p>We would now like to replace Row subtract Row 2 minus Row 1:</p>
+<p>so that entry , and thus we will have all zeros below the first pivot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)=</span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span><span class="o">+</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b =
+
+     1     1    -3     3
+     0     1     2     2
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ref-completed">
+<h3>REF Completed<a class="headerlink" href="#ref-completed" title="Permalink to this headline">¶</a></h3>
+<p>If we wish to solve the linear system, often the fastest way is using back substitution, with “back” indicating we start from the bottom-right and work our way back up to the top-left. Think about the matrix <span class="math notranslate nohighlight">\(b\)</span> means in terms of algebraic equations.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}b = \left[\begin{array}{rrrr}1&amp;1&amp;-3&amp;3\\0&amp;1&amp;2&amp;2\\0&amp;0&amp;1&amp;2\\\end{array}\right]\end{split}\]</div>
+<p>The bottom row means</p>
+<div class="math notranslate nohighlight">
+\[z = 2\]</div>
+<p>which implies the row above it simplifies to</p>
+<div class="math notranslate nohighlight">
+\[y + 2(2) = 2\]</div>
+<p>so <span class="math notranslate nohighlight">\(y = -2\)</span>. With these two values, we can solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align*}
+x + 1(-2) -3(2) &amp;= 3 \\
+x -2 -6 &amp;= 3 \\
+x &amp;= 11
+\end{align*}\end{split}\]</div>
+<p>We now know that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec x = \left[\begin{array}{r}11\\-2\\2\\\end{array}\right]\end{split}\]</div>
+<p>is the solution vector.</p>
+</div>
+<div class="section" id="goal-2-row-reduce-to-rref">
+<h3>Goal 2: Row-Reduce to RREF<a class="headerlink" href="#goal-2-row-reduce-to-rref" title="Permalink to this headline">¶</a></h3>
+<p>First, let’s create a saved checkpoint, since all of our steps up to this point are correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">=</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c =
+
+     1     1    -3     3
+     0     1     2     2
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make our way to RREF, we need get zeros above the “1” in the third row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)=</span><span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c =
+
+     1     1    -3     3
+     0     1     0    -2
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>And to get the zero in Row 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c =
+
+     1     1     0     9
+     0     1     0    -2
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want the element <span class="math notranslate nohighlight">\(a_{12}=0\)</span>, so</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="o">-</span> <span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c =
+
+     1     0     0    11
+     0     1     0    -2
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since the matrix is now in RREF, the solution is just the vector on the right side of the agumentation bar. To check our solution (beyond comparing it to back-substitution), we need a Matlab version of :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="n">c</span><span class="p">(:,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =
+
+    11
+    -2
+     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can verify that  as required:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">x</span>
+<span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+    -4
+     2
+     3
+
+
+v =
+
+    -4
+     2
+     3
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use a logical operator to check:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">==</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+  3x1 logical array
+
+   1
+   1
+   1
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the two expressions were not equal, we would get an array of zero’s instead. We can also check whether our has produced the correct RREF by the using function RREF.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">rref</span><span class="p">([</span><span class="n">A</span><span class="p">,</span><span class="n">v</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+     1     0     0    11
+     0     1     0    -2
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>MATLAB does not have an REF function.</p>
+</div>
+<p>Hence, we have verified that we have the correct solution.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In the examples below, you can copy the code blocks into MATLAB. When you execute them, all the steps will be shown down to <strong>ref</strong>.</p>
+<div class="section" id="by-hand-examples">
+<h3>By-hand Examples<a class="headerlink" href="#by-hand-examples" title="Permalink to this headline">¶</a></h3>
+<p>You should definitely learn to do row-reduction by hand. The first set of examples are great. They either have very few steps, or very easy calculations in every step, or both.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Example 1<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \left[\begin{array}{rrrr}0&amp;0&amp;0&amp;1\\0&amp;6&amp;7&amp;4\\1&amp;4&amp;-2&amp;-2\\0&amp;3&amp;1&amp;1\\\end{array}\right]\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">1</span> <span class="p">;</span>
+      <span class="mi">0</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">4</span><span class="p">;</span>
+      <span class="mi">1</span>     <span class="mi">4</span>    <span class="o">-</span><span class="mi">2</span>    <span class="o">-</span><span class="mi">2</span> <span class="p">;</span>
+      <span class="mi">0</span>     <span class="mi">3</span>     <span class="mi">1</span>     <span class="mi">1</span>  <span class="p">]</span>
+<span class="n">b</span><span class="o">=</span><span class="n">A</span><span class="p">;</span>
+<span class="n">b</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">],:)</span> <span class="o">=</span> <span class="n">b</span><span class="p">([</span><span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">],:)</span>
+<span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Example 2<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \left[\begin{array}{rr}1&amp;0\\-2&amp;1\\2&amp;-1\\-2&amp;1\\\end{array}\right]\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">0</span> <span class="p">;</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">1</span> <span class="p">;</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">1</span> <span class="p">;</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">1</span> <span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">B</span><span class="p">;</span>
+<span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+<span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+<span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="p">,:)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+<span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">+</span> <span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+<span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="p">,:)</span> <span class="o">+</span> <span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./ch1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="1.html" title="previous page">1.1 Systems of Linear Equations</a>
+    <a class='right-next' id="next-link" href="02/1.html" title="next page">1.2.1 Lab 1</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Robb Sinn<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
